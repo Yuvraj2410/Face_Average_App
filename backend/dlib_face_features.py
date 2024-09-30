@@ -3,6 +3,7 @@ import dlib
 import numpy as np
 from io import BytesIO
 from PIL import Image
+import os 
 
 # Load the pre-trained face detector and landmark predictor
 detector = dlib.get_frontal_face_detector()
@@ -20,6 +21,10 @@ detector = dlib.get_frontal_face_detector()
 
 # # Load the predictor from the local file
 # predictor = dlib.shape_predictor(local_model_path)
+
+# Check if the file exists for debugging
+if not os.path.exists('shape_predictor_68_face_landmarks.dat'):
+    raise FileNotFoundError("shape_predictor_68_face_landmarks.dat not found")
 
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
