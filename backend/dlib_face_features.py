@@ -5,20 +5,24 @@ from io import BytesIO
 from PIL import Image
 
 # Load the pre-trained face detector and landmark predictor
-# detector = dlib.get_frontal_face_detector()
+detector = dlib.get_frontal_face_detector()
+
 # predictor = dlib.shape_predictor('https://facefeaturedata.s3.eu-north-1.amazonaws.com/shape_predictor_68_face_landmarks.dat')
 # URL of the .dat file
-model_url = 'https://facefeaturedata.s3.eu-north-1.amazonaws.com/shape_predictor_68_face_landmarks.dat'
-local_model_path = 'shape_predictor_68_face_landmarks.dat'
+# model_url = 'https://facefeaturedata.s3.eu-north-1.amazonaws.com/shape_predictor_68_face_landmarks.dat'
+# local_model_path = 'shape_predictor_68_face_landmarks.dat'
 
-# Check if the file already exists locally, if not download it
-if not os.path.exists(local_model_path):
-    print(f"Downloading {local_model_path}...")
-    urllib.request.urlretrieve(model_url, local_model_path)
-    print(f"Downloaded {local_model_path} successfully!")
+# # Check if the file already exists locally, if not download it
+# if not os.path.exists(local_model_path):
+#     print(f"Downloading {local_model_path}...")
+#     urllib.request.urlretrieve(model_url, local_model_path)
+#     print(f"Downloaded {local_model_path} successfully!")
 
-# Load the predictor from the local file
-predictor = dlib.shape_predictor(local_model_path)
+# # Load the predictor from the local file
+# predictor = dlib.shape_predictor(local_model_path)
+
+predictor = dlib.shape_predictor('backend/shape_predictor_68_face_landmarks.dat')
+
 
 def detect_landmarks(image_file, scale_factor=0.5):   
     try:
