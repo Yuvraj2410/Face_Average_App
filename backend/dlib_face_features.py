@@ -22,11 +22,20 @@ detector = dlib.get_frontal_face_detector()
 # # Load the predictor from the local file
 # predictor = dlib.shape_predictor(local_model_path)
 
-# Check if the file exists for debugging
-if not os.path.exists('shape_predictor_68_face_landmarks.dat'):
+# # Check if the file exists for debugging
+# if not os.path.exists('shape_predictor_68_face_landmarks.dat'):
+#     raise FileNotFoundError("shape_predictor_68_face_landmarks.dat not found")
+
+# predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+
+# Use absolute path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+dat_file_path = os.path.join(current_dir, 'shape_predictor_68_face_landmarks.dat')
+
+if not os.path.exists(dat_file_path):
     raise FileNotFoundError("shape_predictor_68_face_landmarks.dat not found")
 
-predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor(dat_file_path)
 
 
 def detect_landmarks(image_file, scale_factor=0.5):   
