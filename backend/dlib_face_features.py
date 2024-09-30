@@ -21,7 +21,7 @@ detector = dlib.get_frontal_face_detector()
 # # Load the predictor from the local file
 # predictor = dlib.shape_predictor(local_model_path)
 
-predictor = dlib.shape_predictor('backend/shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
 
 def detect_landmarks(image_file, scale_factor=0.5):   
