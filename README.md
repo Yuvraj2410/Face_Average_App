@@ -9,8 +9,7 @@ This project demonstrates how to create an average face using OpenCV. The averag
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Contributions](#contributions)
-- [License](#license)
+
 
 ## Introduction
 The average face can provide insights into beauty standards and cultural perceptions of attractiveness. This project aims to blend facial features from multiple images into a single composite image.
@@ -30,6 +29,11 @@ The average face can provide insights into beauty standards and cultural percept
 - React (frontend)
 - Vercel (frontend deployment)
 - Render (backend deployment)
+
+##Usage
+Start the backend server:
+`uvicorn main:app --reload`
+Visit the frontend on Vercel to upload images and generate the average face.
 
 frontend deployment - https://face-average-app.vercel.app/
 
