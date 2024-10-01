@@ -1,6 +1,6 @@
 fastapi
 uvicorn
 opencv-python-headless
-dlib
-Pillow
+dlib-bin
 numpy
+Pillow
