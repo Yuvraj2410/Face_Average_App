@@ -22,14 +22,14 @@ detector = dlib.get_frontal_face_detector()
 # # Load the predictor from the local file
 # predictor = dlib.shape_predictor(local_model_path)
 
-# # Check if the file exists for debugging
-# if not os.path.exists('shape_predictor_68_face_landmarks.dat'):
-#     raise FileNotFoundError("shape_predictor_68_face_landmarks.dat not found")
+# Check if the file exists for debugging
+if not os.path.exists('shape_predictor_68_face_landmarks.dat'):
+    raise FileNotFoundError("shape_predictor_68_face_landmarks.dat not found")
 
-# predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
-# Update path to use the cloned repo's path
-predictor = dlib.shape_predictor('eameo-faceswap-generator/shape_predictor_68_face_landmarks.dat')
+# # Update path to use the cloned repo's path
+# predictor = dlib.shape_predictor('eameo-faceswap-generator/shape_predictor_68_face_landmarks.dat')
 
 
 def detect_landmarks(image_file, scale_factor=0.5):   
