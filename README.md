@@ -30,9 +30,10 @@ The average face can provide insights into beauty standards and cultural percept
 - Vercel (frontend deployment)
 - Render (backend deployment)
 
-##Usage
+## Usage
 Start the backend server:
 `uvicorn main:app --reload`
+
 Visit the frontend on Vercel to upload images and generate the average face.
 
 frontend deployment - https://face-average-app.vercel.app/
