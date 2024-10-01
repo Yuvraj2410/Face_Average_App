@@ -4,4 +4,3 @@ opencv-python-headless
 dlib-bin
 numpy
 Pillow
-!git clone https://github.com/nicolasmetallo/eameo-faceswap-generator
